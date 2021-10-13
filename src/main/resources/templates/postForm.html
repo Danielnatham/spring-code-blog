@@ -18,62 +18,57 @@
 
 </head>
 <body>
-<!-- Navigation Bar -->
-<header>
-    <nav class="navbar navbar-dark bg-dark">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1" style="margin-left: 25px">My Code Blog</span>
+
+    <!-- Navigation Bar -->
+    <header th:replace="fragments :: header"></header>
+
+    <section>
+        <div class="container" style="width: 60%; padding-bottom: 30px;">
+
+            <!-- Breadcrump Navigation -->
+            <nav aria-label="breadcrumb" style="margin: 30px">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item" aria-current="page"><a href="/posts">Posts</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Novo Post</li>
+                </ol>
+            </nav>
+
+            <form method="post" action="/newpost" th:object="${post}">
+
+                <div class="form-group mb-3 col">
+                    <input th:field="*{title}" th:errorclass="is-invalid" type="text" class="form-control" name="titulo" placeholder="Título *">
+                    <div class="invalid-feedback" th:errors="*{title}"></div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <input th:field="*{author}" th:errorclass="is-invalid" type="text" class="form-control" name="autor" placeholder="Autor *">
+                    <div class="invalid-feedback" th:errors="*{author}"></div>
+                </div>
+
+                <div>
+                    <textarea th:field="*{text}" th:errorclass="is-invalid" id="summernote" type="text" class="form-control mb-3" name="texto" placeholder="Texto *"></textarea>
+                    <div class="invalid-feedback" th:errors="*{text}"></div>
+                </div>
+
+
+                <small class="form-text text-muted mb-3">(*) Campos obrigatórios</small>
+
+                <div class="col">
+                    <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Publicar</button>
+                    <a href="/posts" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
+                </div>
+
+            </form>
         </div>
-    </nav>
-</header>
+    </section>
 
-<section>
-    <div class="container" style="width: 60%; padding-bottom: 30px;">
-
-        <!-- Breadcrump Navigation -->
-        <nav aria-label="breadcrumb" style="margin: 30px">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item" aria-current="page"><a href="/posts">Posts</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Novo Post</li>
-            </ol>
-        </nav>
-
-        <form method="post" action="/newpost" th:object="${post}">
-
-            <div class="form-group mb-3 col">
-                <input th:field="*{title}" th:errorclass="is-invalid" type="text" class="form-control" name="titulo" placeholder="Título *">
-                <div class="invalid-feedback" th:errors="*{title}"></div>
-            </div>
-
-            <div class="form-group mb-3">
-                <input th:field="*{author}" th:errorclass="is-invalid" type="text" class="form-control" name="autor" placeholder="Autor *">
-                <div class="invalid-feedback" th:errors="*{author}"></div>
-            </div>
-
-            <div>
-                <textarea th:field="*{text}" th:errorclass="is-invalid" id="summernote" type="text" class="form-control mb-3" name="texto" placeholder="Texto *"></textarea>
-                <div class="invalid-feedback" th:errors="*{text}"></div>
-            </div>
-
-
-            <small class="form-text text-muted mb-3">(*) Campos obrigatórios</small>
-
-            <div class="col">
-                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Publicar</button>
-                <a href="/posts" class="btn btn-light" role="button" style="margin-top: 10px;">Cancelar</a>
-            </div>
-
-        </form>
-    </div>
-</section>
-
-<script>
-    $('#summernote').summernote({
-        placeholder: "texto",
-        tabsize: 2,
-        height: 300
-    });
-</script>
+    <script>
+        $('#summernote').summernote({
+            placeholder: "texto",
+            tabsize: 2,
+            height: 300
+        });
+    </script>
 
 </body>
 </html>

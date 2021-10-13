@@ -11,42 +11,44 @@
 </head>
 <body>
     <!-- Navigation Bar -->
-    <header>
-        <nav class="navbar navbar-dark bg-dark">
-            <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1" style="margin-left: 25px">My Code Blog</span>
-                <a href="/newpost" class="btn btn-primary" role="button">Novo Post</a>
-            </div>
-        </nav>
-    </header>
+    <header th:replace="fragments :: header"></header>
 
-<section>
-    <div class="container" style="width: 60%; padding-bottom: 30px;">
+    <section>
+        <div class="container" style="width: 60%; padding-bottom: 30px;">
 
-        <!-- Breadcrump Navigation -->
-        <nav aria-label="breadcrumb" style="margin: 30px">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item active" aria-current="page">Posts</li>
-            </ol>
-        </nav>
+            <!-- Breadcrump Navigation -->
+            <nav aria-label="breadcrumb" style="margin: 30px">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item active" aria-current="page">Posts</li>
+                </ol>
+            </nav>
 
-        <!-- Post Card -->
-        <div class="card" style="margin-top: 30px" th:each="post : ${posts}" >
-            <div class="card-header mb-2 text-muted" style="font-size: 0.8rem">
-                <span th:text="${post.author}"></span>
-                <span th:text="${post.creation}"></span>
+            <!-- Post Card -->
+            <div class="card" style="margin-top: 30px" th:each="post : ${posts}" >
+                <div class="card-header mb-2 text-muted" style="font-size: 0.8rem">
+                    <span th:text="${post.author}"></span>
+                    <span th:text="${post.creation}"></span>
+                </div>
+                <div class="card-body">
+                    <!-- Title and Text -->
+                    <h5 class="card-title" th:text="${post.title}">Special title</h5>
+                    <p class="card-text">
+                        <span th:utext="${#strings.abbreviate(post.text, 300)}"></span>
+                    <!-- Buttons -->
+                    <div class="mt-3">
+                        <form method="post" action="#" th:action="@{'/deletepost/{id}'(id=${post.id})}" th:method="delete" >
+                            <button type="submit" class="btn btn-danger" >Deletar</button>
+                            <a th:href="@{/posts/{id}(id=${post.id})}" class="btn btn-primary">Ver</a>
+                        </form>
+                    </div>
+                    </p>
+
+
+                </div>
             </div>
-            <div class="card-body">
-                <h5 class="card-title" th:text="${post.title}">Special title</h5>
-                <p class="card-text">
-                    <span th:utext="${#strings.abbreviate(post.text, 300)}"></span>
-                </p>
-                <a th:href="@{/posts/{id}(id=${post.id})}" class="btn btn-primary">Ver</a>
-            </div>
+
         </div>
-
-    </div>
-</section>
+    </section>
 
 </body>
 </html>

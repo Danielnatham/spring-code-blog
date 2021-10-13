@@ -31,4 +31,10 @@ public class CodeblogServiceImpl implements CodeblogService {
     public Post save(Post post) {
         return codeblogRepository.save(post);
     }
+
+    @Override
+    public void deleteById(Long id) {
+
+        codeblogRepository.deleteById(id);
+    }
 }
