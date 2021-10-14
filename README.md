@@ -97,14 +97,14 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
   <tr>
     <td align="center">
       <a href="github.com/danielnatham">
-        <img src="https://avatars.githubusercontent.com/u/68167359?v=4" width="100px;" alt="Foto do Iuri Silva no GitHub"/
+        <img src="https://avatars.githubusercontent.com/u/68167359?v=4" width="100px;" alt="Foto do Iuri Silva no GitHub"/>
+        <br>
         <sub>
           <b>Daniel Nathan</b>
         </sub>
       </a>
     </td>
-
   </tr>
 </table>
 
-[⬆ Voltar ao topo](#nome-do-projeto
+[⬆ Voltar ao topo](#nome-do-projeto)
