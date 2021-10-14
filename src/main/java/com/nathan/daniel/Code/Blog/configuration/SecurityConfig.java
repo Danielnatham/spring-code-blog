@@ -30,6 +30,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("nexxus").password("{noop}root").roles("USER");
+                .withUser("nexxus").password("{noop}root").roles("USER"); // TODO: .Env var
     }
 }

@@ -22,6 +22,7 @@ public class CodeblogController {
     @Autowired
     CodeblogService codeblogService;
 
+    //TODO: Adicionar o path "/"
     @GetMapping("/posts")
     public ModelAndView getPosts() {
 
@@ -67,6 +68,7 @@ public class CodeblogController {
         }
 
         post.setCreation(LocalDate.now());
+
         codeblogService.save(post);
 
         return new ModelAndView("redirect:/posts");

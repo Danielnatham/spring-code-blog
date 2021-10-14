@@ -8,8 +8,6 @@ import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 
 @ToString
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "TB_POST")
 @Getter
