@@ -1,4 +1,4 @@
-# Code Blog
+# Code-Blog
 
 ![java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![postgres](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
@@ -107,4 +107,4 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
   </tr>
 </table>
 
-[⬆ Voltar ao topo](#nome-do-projeto)
+[⬆ Voltar ao topo](#Code-blog)
