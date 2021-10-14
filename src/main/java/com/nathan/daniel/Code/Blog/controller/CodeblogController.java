@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 
 @Slf4j
@@ -21,12 +22,14 @@ public class CodeblogController {
 
     @Autowired
     CodeblogService codeblogService;
-    
+
     @GetMapping(value = {"/", "posts"})
     public ModelAndView getPosts() {
 
         ModelAndView mv = new ModelAndView("posts");
         List<Post> posts = codeblogService.findAll();
+
+        Collections.reverse(posts);
 
         mv.addObject("posts", posts);
 
