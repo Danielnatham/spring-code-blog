@@ -21,7 +21,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Deletar posts
 - [x] Login com spring Security
 - [ ] Delete aparece apenas para logados
-- [ ] Ordenação de posts
+- [x] Ordenação de posts
 
 ## ⚙️ Tecnologias usadas
 
