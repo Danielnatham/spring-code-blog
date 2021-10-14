@@ -21,9 +21,8 @@ public class CodeblogController {
 
     @Autowired
     CodeblogService codeblogService;
-
-    //TODO: Adicionar o path "/"
-    @GetMapping("/posts")
+    
+    @GetMapping(value = {"/", "posts"})
     public ModelAndView getPosts() {
 
         ModelAndView mv = new ModelAndView("posts");
