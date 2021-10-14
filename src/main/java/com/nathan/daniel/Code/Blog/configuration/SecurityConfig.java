@@ -29,7 +29,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
+        String user = System.getenv("LG_USER");
+        String password = System.getenv("LG_PASSWORD");
+
         auth.inMemoryAuthentication()
-                .withUser("nexxus").password("{noop}root").roles("USER"); // TODO: .Env var
+                .withUser(user).password(password).roles("ADMIN");
     }
 }
